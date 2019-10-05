@@ -19,3 +19,6 @@ https://assetstore.unity.com/packages/3d/props/exterior/street-bench-656
 Free Trees
 https://assetstore.unity.com/packages/3d/vegetation/trees/free-trees-103208
 
+Low Poly Park Free
+https://assetstore.unity.com/packages/3d/environments/urban/low-poly-park-61922
+
