@@ -1,39 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-5074619858392117457
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Fly
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 39399c80614754daa9b1b57a0fb70b78, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-2706180134198129144
+--- !u!1102 &-2801678560286022447
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BaseAnimation
+  m_Name: DuckWalking
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -46,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2d384fbb056ac4f9ab49331dfd6d536b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7201d501ac109499fa4acb517648cb85, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -62,17 +36,14 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -2706180134198129144}
-    m_Position: {x: 240, y: -60, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 3132151350619983969}
     m_Position: {x: 370, y: 110, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -1254545038847094444}
-    m_Position: {x: 370, y: 20, z: 0}
+    m_State: {fileID: -1594906665595286139}
+    m_Position: {x: 640.91736, y: -56.513763, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -5074619858392117457}
-    m_Position: {x: 520, y: -100, z: 0}
+    m_State: {fileID: -2801678560286022447}
+    m_Position: {x: 440, y: 30, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -83,14 +54,14 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 3132151350619983969}
---- !u!1102 &-1254545038847094444
+--- !u!1102 &-1594906665595286139
 AnimatorState:
   serializedVersion: 5
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Walking
+  m_Name: DuckFly
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -103,7 +74,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7201d501ac109499fa4acb517648cb85, type: 2}
+  m_Motion: {fileID: 7400000, guid: 39399c80614754daa9b1b57a0fb70b78, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

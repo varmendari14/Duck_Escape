@@ -23,6 +23,7 @@ public class CharacterBasicControl : MonoBehaviour
     }
 
     void Update() {
+        Debug.Log(controller.isGrounded ? "GROUNDED" : "NOT GROUNDED");
         if (controller.isGrounded) {
             // Walking and 
             if (Input.GetKey(KeyCode.W)) {
