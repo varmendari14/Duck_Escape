@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CharacterBasicControl : MonoBehaviour
 {
-    float speed = 4;
-    float runSpeed = 12;
+    float sneakspeed = 1;
+    float speed = 2;
+    float runSpeed = 4;
     float rotSpeed = 80;
     float rot = 0f;
     float gravity = 8;
@@ -23,9 +24,10 @@ public class CharacterBasicControl : MonoBehaviour
     }
 
     void Update() {
-        Debug.Log(controller.isGrounded ? "GROUNDED" : "NOT GROUNDED");
+        // Debug.Log(controller.isGrounded ? "GROUNDED" : "NOT GROUNDED");
         if (controller.isGrounded) {
-            // Walking and 
+            // Walking and
+            // Used to be just GetKey
             if (Input.GetKey(KeyCode.W)) {
                 anim.SetBool("Walking", true);
                 moveDir = new Vector3(0,0,1);
@@ -37,18 +39,12 @@ public class CharacterBasicControl : MonoBehaviour
                 moveDir = new Vector3(0,0,0);
             }
 
-            //Jumping
-            if(Input.GetKeyDown(KeyCode.Space)) {
-                moveDir.y = 5;
-                GetComponent<Animator>().SetTrigger("Jump");
-            }
-
             //Crouching/Sneaking
             if (Input.GetKey(KeyCode.C)) {
                 anim.SetBool("Walking", false);
                 anim.SetBool("Sneaking", true);
                 moveDir = new Vector3(0,0,1);
-                moveDir *= speed;
+                moveDir *= sneakspeed;
                 moveDir = transform.TransformDirection(moveDir);
             }
             if (Input.GetKeyUp(KeyCode.C)) {
@@ -56,7 +52,7 @@ public class CharacterBasicControl : MonoBehaviour
                 moveDir = new Vector3(0,0,0);
             }
 
-            //Crouching/Sneaking
+            //Running
             if (Input.GetKey(KeyCode.R)) {
                 anim.SetBool("Walking", false);
                 anim.SetBool("Running", true);
@@ -74,6 +70,11 @@ public class CharacterBasicControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N)) {
                 GetComponent<Animator>().SetTrigger("Swing");
         }
+        //Jumping
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            moveDir.y = 5;
+            GetComponent<Animator>().SetTrigger("Jump");
+        }
 
         rot += Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
         transform.eulerAngles = new Vector3(0, rot, 0);
@@ -81,4 +82,30 @@ public class CharacterBasicControl : MonoBehaviour
         moveDir.y -= gravity * Time.deltaTime;
         controller.Move(moveDir * Time.deltaTime);
     }
+
+    //Physics
+    // void FixedUpdate() {
+    //     // Rolling Mechanics
+    //     float moveHorizontal = Input.GetAxis("Horizontal");
+    //     float moveVertical = Input.GetAxis("Vertical");
+
+    //     rot += moveHorizontal * rotSpeed * Time.deltaTime;
+    //     transform.eulerAngles = new Vector3(0, rot, 0);
+
+    //     moveDir.y -= gravity * Time.deltaTime;
+    //     controller.Move(moveDir * Time.deltaTime);
+
+    //     Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+    //     rb.AddForce(movement * 1000);
+
+    // }
+
+    // public AudioClip catchAudio;
+    // void onCollisionEnter (Collider other) {
+    //     if (other.gameObject.CompareTag("pickup")) {
+    //         other.gameObject.SetActive(false);
+    //         AudioSource.PlayClipAtPoint(catchAudio, transform.position);
+    //     }
+    // }
 }
