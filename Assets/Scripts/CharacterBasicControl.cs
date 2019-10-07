@@ -34,10 +34,6 @@ public class CharacterBasicControl : MonoBehaviour
                 moveDir *= speed;
                 moveDir = transform.TransformDirection(moveDir);
             }
-            if (Input.GetKeyUp(KeyCode.W)) {
-                anim.SetBool("Walking", false);
-                moveDir = new Vector3(0,0,0);
-            }
 
             //Crouching/Sneaking
             if (Input.GetKey(KeyCode.C)) {
@@ -46,10 +42,6 @@ public class CharacterBasicControl : MonoBehaviour
                 moveDir = new Vector3(0,0,1);
                 moveDir *= sneakspeed;
                 moveDir = transform.TransformDirection(moveDir);
-            }
-            if (Input.GetKeyUp(KeyCode.C)) {
-                anim.SetBool("Sneaking", false);
-                moveDir = new Vector3(0,0,0);
             }
 
             //Running
@@ -60,20 +52,31 @@ public class CharacterBasicControl : MonoBehaviour
                 moveDir *= runSpeed;
                 moveDir = transform.TransformDirection(moveDir);
             }
-            if (Input.GetKeyUp(KeyCode.R)) {
-                anim.SetBool("Running", false);
-                moveDir = new Vector3(0,0,0);
+            
+            //Jumping
+            if(Input.GetKeyDown(KeyCode.Space)) {
+                moveDir.y = 5;
+                GetComponent<Animator>().SetTrigger("Jump");
             }
         }
 
+        // Stop moving
+        if (Input.GetKeyUp(KeyCode.W)) {
+            anim.SetBool("Walking", false);
+            moveDir = new Vector3(0,0,0);
+        }
+        if (Input.GetKeyUp(KeyCode.C)) {
+            anim.SetBool("Sneaking", false);
+            moveDir = new Vector3(0,0,0);
+        }
+        if (Input.GetKeyUp(KeyCode.R)) {
+            anim.SetBool("Running", false);
+            moveDir = new Vector3(0,0,0);
+        }
+        
         // Net Swing
         if (Input.GetKeyDown(KeyCode.N)) {
                 GetComponent<Animator>().SetTrigger("Swing");
-        }
-        //Jumping
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            moveDir.y = 5;
-            GetComponent<Animator>().SetTrigger("Jump");
         }
 
         rot += Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
