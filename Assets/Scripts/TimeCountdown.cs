@@ -6,15 +6,25 @@ using UnityEngine.UI;
 public class TimeCountdown : MonoBehaviour
 {
     public Text timeText;
-    public int countdown;
+    public int startTime;
+    private float currTime;
 
 
     void Start() {
-    	//countdown = 60; //set starting time here, i just did 60 by default
+    	currTime = startTime;
     }
 
     void Update() {
-        //time countdown here. every second passing, do countdown--;
-        timeText.text = "Time Left: " + countdown;
+        currTime -= 1 * Time.deltaTime;
+        if (currTime < 30) {
+            timeText.color = new Color(1f, .8f, 0, 1);
+        }
+        if (currTime < 10) {
+            timeText.color = new Color(1, 0, 0, 1);
+        }
+        if (currTime < 0) {
+            currTime = 0;
+        }
+        timeText.text = "Time Left: " + currTime.ToString("0");
     }
 }
