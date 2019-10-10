@@ -7551,6 +7551,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7803338166950746336, guid: 2976df4fab2e54ed7a7abaf810a98c1b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7803338166950746337, guid: 2976df4fab2e54ed7a7abaf810a98c1b,
         type: 3}
       propertyPath: m_Mass
@@ -7901,7 +7906,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0.8
+  m_BaseOffset: 0.6
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1001 &1720338943

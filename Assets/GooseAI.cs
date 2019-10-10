@@ -51,6 +51,8 @@ public class GooseAI : MonoBehaviour
     	if (goose.triggered == true) {
     		anim.SetBool("Attack",true);
     		nav.SetDestination(player.transform.position);
+    	} else {
+    		anim.SetBool("Attack",false);
     	}
     	/*Vector3 forward = transform.forward *10;
     	Debug.DrawRay(this.transform.position, forward, Color.red);
