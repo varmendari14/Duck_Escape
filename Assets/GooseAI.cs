@@ -34,6 +34,8 @@ public class GooseAI : MonoBehaviour
 			nav.SetDestination(waypoints[currWaypoint].transform.position);
 		}
 
+		Vector3 relativePos = waypoints[currWaypoint].transform.position - transform.position;
+ 			transform.rotation = Quaternion.LookRotation (relativePos);
 	}
     // Start is called before the first frame update
     void Start()
@@ -48,21 +50,24 @@ public class GooseAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    	//transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
+
+    	if (transform.position.y <= 0.8820) {
+    		nav.enabled = true;
+    	}
+
     	if (goose.triggered == true) {
     		anim.SetBool("Attack",true);
-    		nav.SetDestination(player.transform.position);
+    		//nav.SetDestination(player.transform.position); USED to attack player
+
     	} else {
     		anim.SetBool("Attack",false);
     	}
-    	/*Vector3 forward = transform.forward *10;
-    	Debug.DrawRay(this.transform.position, forward, Color.red);
-    	dir = (this.transform.position - player.transform.position).normalized;
-    	dot = Vector3.Dot(dir, this.transform.forward);
-    	Debug.Log(dot);
-    	if (dot > 0 && Vector3.Distance(player.transform.position, this.transform.position) < 10f) {
-    		Debug.Log("Attack");
-    	}*/
-    	//anim.SetFloat("vely", nav.velocity.magnitude / nav.speed);
+
+    	if (goose.obtrig == true) {
+    		nav.enabled = false;
+    		GetComponent<Rigidbody>().AddForce(0f, 30f, 0f, ForceMode.Impulse);
+    	}
        if (!nav.pathPending && nav.remainingDistance < 1f) {
         	setNextWaypoint();
         }
