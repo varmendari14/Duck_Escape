@@ -20,6 +20,7 @@ public class GooseAI : MonoBehaviour
 	public GameObject collider;
 	GooseAttack goose;
 	public GameObject player;
+	Vector3 relativePos;
 
 
 	private void setNextWaypoint() {
@@ -28,14 +29,16 @@ public class GooseAI : MonoBehaviour
 		}
  		if (currWaypoint < waypoints.Length ) {
 			nav.SetDestination(waypoints[currWaypoint].transform.position);
+			relativePos = waypoints[currWaypoint].transform.position - transform.position;
+ 			transform.rotation = Quaternion.LookRotation (relativePos);
+
 			currWaypoint++;
 		} else if (currWaypoint >= waypoints.Length ) {
 			currWaypoint = 0;
 			nav.SetDestination(waypoints[currWaypoint].transform.position);
-		}
-
-		Vector3 relativePos = waypoints[currWaypoint].transform.position - transform.position;
+			relativePos = waypoints[currWaypoint].transform.position - transform.position;
  			transform.rotation = Quaternion.LookRotation (relativePos);
+		}
 	}
     // Start is called before the first frame update
     void Start()
