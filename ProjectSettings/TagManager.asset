@@ -6,6 +6,8 @@ TagManager:
   tags:
   - pickup
   - Object
+  - ugly
+  - rubber
   layers:
   - Default
   - TransparentFX

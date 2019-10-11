@@ -19,9 +19,10 @@ public class CheckPickup : MonoBehaviour
 
     void OnCollisionEnter (Collision other) {
         //Debug.Log("collided");
-        if (other.gameObject.tag == "pickup") {
-            other.gameObject.SetActive(false);
-            AudioSource.PlayClipAtPoint(catchAudio, transform.position);
+        if (other.gameObject.tag == "pickup" || other.gameObject.tag == "ugly" 
+            || other.gameObject.tag == "rubber") {
+                other.gameObject.SetActive(false);
+                AudioSource.PlayClipAtPoint(catchAudio, transform.position);
         }
     }
 }

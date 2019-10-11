@@ -20,10 +20,10 @@ public class PickupUIUpdate : MonoBehaviour
             }
             ducksText.text = "Ducks Remaining: " + ducksCount;
         }
-        if (other.gameObject.tag == "rubberduck") {
+        if (other.gameObject.tag == "rubber") {
             rubberText.color = new Color(0, 1, 0, 1);
         }
-        if (other.gameObject.tag == "uglyduck") {
+        if (other.gameObject.tag == "ugly") {
             uglyText.color = new Color(0, 1, 0, 1);
         }
     }
