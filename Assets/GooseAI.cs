@@ -20,6 +20,7 @@ public class GooseAI : MonoBehaviour
 	public GameObject collider;
 	GooseAttack goose;
 	public GameObject player;
+    Vector3 relativePos;
 
 
 	private void setNextWaypoint() {
@@ -28,14 +29,16 @@ public class GooseAI : MonoBehaviour
 		}
  		if (currWaypoint < waypoints.Length ) {
 			nav.SetDestination(waypoints[currWaypoint].transform.position);
+            relativePos = waypoints[currWaypoint].transform.position - transform.position;
+            transform.rotation = Quaternion.LookRotation (relativePos);
+
 			currWaypoint++;
 		} else if (currWaypoint >= waypoints.Length ) {
 			currWaypoint = 0;
 			nav.SetDestination(waypoints[currWaypoint].transform.position);
+            relativePos = waypoints[currWaypoint].transform.position - transform.position;
+            transform.rotation = Quaternion.LookRotation (relativePos);
 		}
-
-		Vector3 relativePos = waypoints[currWaypoint].transform.position - transform.position;
- 			transform.rotation = Quaternion.LookRotation (relativePos);
 	}
     // Start is called before the first frame update
     void Start()
@@ -58,7 +61,7 @@ public class GooseAI : MonoBehaviour
 
     	if (goose.triggered == true) {
     		anim.SetBool("Attack",true);
-    		//nav.SetDestination(player.transform.position); USED to attack player
+    	    //nav.SetDestination(player.transform.position); USED to attack player
 
     	} else {
     		anim.SetBool("Attack",false);
@@ -66,7 +69,7 @@ public class GooseAI : MonoBehaviour
 
     	if (goose.obtrig == true) {
     		nav.enabled = false;
-    		GetComponent<Rigidbody>().AddForce(0f, 30f, 0f, ForceMode.Impulse);
+    		GetComponent<Rigidbody>().AddForce(0f, 20f, 0f, ForceMode.Impulse);
     	}
        if (!nav.pathPending && nav.remainingDistance < 1f) {
         	setNextWaypoint();
