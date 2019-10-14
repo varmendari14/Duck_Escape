@@ -12,7 +12,6 @@ public class HealthBar : MonoBehaviour
 
     void Start() {
     	currHealth = maxHealth;
-      healthText.color = new Color(1, 0, 0, 1);
       healthText.text = "Health: " + currHealth.ToString("0");
     }
 
