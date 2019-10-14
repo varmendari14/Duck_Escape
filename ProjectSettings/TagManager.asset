@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - pickup
+  - Object
+  - ugly
+  - rubber
   layers:
   - Default
   - TransparentFX
