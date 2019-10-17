@@ -1,17 +1,18 @@
 # Duck_Escape
 Team Goober's Duck Escape project for Fall 2019 video game design.
 
-# Controls
+## Controls
 * Hold ```W``` - Go Forward, Relase W - Stop
 * Hold ```A/D``` - Turn Left/Right
-* Press ```N``` - Swing Net
 * Hold ```W & R``` - Run
 * Hold ```W & C``` - Crouch
+* Press ```N``` - Swing Net
+* Press ```H``` - Place Cage (Not yet implemented)
 
-# Goals
+## Goals
 Catch all the ducks before time runs out! Try to find the ugly duckling and the rubber duck if you can.
 
-# Tech Requirments
+## Tech Requirments
 1. Implemented in Unity
 2. Is in 3D
 3. Control the human character to catch ducks
