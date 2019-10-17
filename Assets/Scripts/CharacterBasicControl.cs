@@ -55,7 +55,7 @@ public class CharacterBasicControl : MonoBehaviour
             
             //Jumping
             if(Input.GetKeyDown(KeyCode.Space)) {
-                moveDir.y = 5;
+                moveDir.y = 3;
                 GetComponent<Animator>().SetTrigger("Jump");
             }
         }
