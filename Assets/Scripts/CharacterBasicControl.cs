@@ -64,6 +64,7 @@ public class CharacterBasicControl : MonoBehaviour
                 moveDir = new Vector3(0,0,0);
                 GetComponent<Animator>().SetTrigger("DropBox");
                 if (!hasDropped) {
+                    hasDropped = true;
                     GameObject boxobj = Instantiate(box, transform.position, Quaternion.identity) as GameObject;
                 }
             }
