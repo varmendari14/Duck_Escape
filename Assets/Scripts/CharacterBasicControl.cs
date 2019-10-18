@@ -65,7 +65,7 @@ public class CharacterBasicControl : MonoBehaviour
                 GetComponent<Animator>().SetTrigger("DropBox");
                 if (!hasDropped) {
                     hasDropped = true;
-                    GameObject boxobj = Instantiate(box, transform.position, Quaternion.identity) as GameObject;
+                    GameObject boxobj = Instantiate(box, transform.position + new Vector3(-0.5F, -0.5F, 0), Quaternion.identity) as GameObject;
                 }
             }
             
