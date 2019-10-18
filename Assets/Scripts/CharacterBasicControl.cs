@@ -52,6 +52,15 @@ public class CharacterBasicControl : MonoBehaviour
                 moveDir *= runSpeed;
                 moveDir = transform.TransformDirection(moveDir);
             }
+
+            // Box Drop
+            if (Input.GetKeyDown(KeyCode.B)) {
+                anim.SetBool("Walking", false);
+                anim.SetBool("Sneaking", false);
+                anim.SetBool("Running", false);
+                moveDir = new Vector3(0,0,0);
+                GetComponent<Animator>().SetTrigger("DropBox");
+            }
             
             //Jumping
             if(Input.GetKeyDown(KeyCode.Space)) {
