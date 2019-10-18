@@ -364,6 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f46e23f63d341c4fb5cacf3f6dc04e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDropped: 0
+  box: {fileID: 3420926336235164840, guid: 7be0ab6790750704a854f7e3bdb52d72, type: 3}
 --- !u!143 &3045265526135325817
 CharacterController:
   m_ObjectHideFlags: 0

@@ -17,6 +17,9 @@ public class CharacterBasicControl : MonoBehaviour
     Animator anim;
     private Rigidbody rb;
 
+    public bool hasDropped;
+    public GameObject box;
+
     void Start() {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
@@ -60,6 +63,9 @@ public class CharacterBasicControl : MonoBehaviour
                 anim.SetBool("Running", false);
                 moveDir = new Vector3(0,0,0);
                 GetComponent<Animator>().SetTrigger("DropBox");
+                if (!hasDropped) {
+                    GameObject boxobj = Instantiate(box, transform.position, Quaternion.identity) as GameObject;
+                }
             }
             
             //Jumping
