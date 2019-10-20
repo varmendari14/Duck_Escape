@@ -21,8 +21,14 @@ public class GameEnding : MonoBehaviour
                 newLevelText.text = "Restart";
             } else
             {
-                mainText.text = "You lucky duck, you won.";
+                mainText.text = "You lucky duck, you won. Your birds are swimming happily in their pond.";
                 newLevelText.text = "Next Level";
+            }
+            if (statTracker.rubberDuck) {
+                mainText.text += " The rubber duck floats in the pond.";
+            }
+            if (statTracker.uglyDuck) {
+                mainText.text += " The ugly duckling dances in the sand.";
             }
         }
     }
