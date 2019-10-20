@@ -9,14 +9,18 @@ public class PickupUIUpdate : MonoBehaviour
     public Text rubberText;
     public Text uglyText;
     public int numDucksAtStart;
+    public GameEnding gameEnding;
+    public StatTracker statTracker;
     private int ducksCount;
 
     public void RemoveDuckCount(Collision other) {
         if (other.gameObject.tag == "pickup") {
             Debug.Log("pickup tag detected");
 	        ducksCount--;
-            if (ducksCount < 0) {
+            statTracker.decrementDucks();
+            if (ducksCount <= 0) {
                 ducksCount = 0;
+                gameEnding.gameWon();
             }
             ducksText.text = "Ducks Remaining: " + ducksCount;
         }
@@ -34,6 +38,7 @@ public class PickupUIUpdate : MonoBehaviour
 
     void Start() {
         ducksCount = numDucksAtStart;
+        statTracker.setDucks(ducksCount);
     	ducksText.text = "Ducks Remaining: " + ducksCount;
     }
 

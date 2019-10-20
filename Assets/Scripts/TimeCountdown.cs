@@ -7,6 +7,7 @@ public class TimeCountdown : MonoBehaviour
 {
     public Text timeText;
     public int startTime;
+    public GameEnding gameEnding;
     private float currTime;
 
 
@@ -24,6 +25,7 @@ public class TimeCountdown : MonoBehaviour
         }
         if (currTime < 0) {
             currTime = 0;
+            gameEnding.gameLost();
         }
         timeText.text = "Time Left: " + currTime.ToString("0");
     }

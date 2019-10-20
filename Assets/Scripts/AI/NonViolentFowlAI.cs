@@ -79,7 +79,7 @@ public class NonViolentFowlAI : MonoBehaviour
         {
             setNextWaypoint();
         }
-        animator.SetFloat("vely", nav.velocity.magnitude / nav.speed);
+        //animator.SetFloat("vely", nav.velocity.magnitude / nav.speed);
     }
 
     private void EvadeBehavior()
