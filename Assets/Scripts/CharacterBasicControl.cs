@@ -17,6 +17,9 @@ public class CharacterBasicControl : MonoBehaviour
     Animator anim;
     private Rigidbody rb;
 
+    public bool hasDropped;
+    public GameObject box;
+
     void Start() {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
@@ -52,10 +55,23 @@ public class CharacterBasicControl : MonoBehaviour
                 moveDir *= runSpeed;
                 moveDir = transform.TransformDirection(moveDir);
             }
+
+            // Box Drop
+            if (Input.GetKeyDown(KeyCode.B)) {
+                anim.SetBool("Walking", false);
+                anim.SetBool("Sneaking", false);
+                anim.SetBool("Running", false);
+                moveDir = new Vector3(0,0,0);
+                GetComponent<Animator>().SetTrigger("DropBox");
+                if (!hasDropped) {
+                    hasDropped = true;
+                    GameObject boxobj = Instantiate(box, transform.position + new Vector3(-0.5F, -0.5F, 0), Quaternion.identity) as GameObject;
+                }
+            }
             
             //Jumping
             if(Input.GetKeyDown(KeyCode.Space)) {
-                moveDir.y = 5;
+                moveDir.y = 3;
                 GetComponent<Animator>().SetTrigger("Jump");
             }
         }

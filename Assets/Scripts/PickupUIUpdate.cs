@@ -13,7 +13,7 @@ public class PickupUIUpdate : MonoBehaviour
     public StatTracker statTracker;
     private int ducksCount;
 
-    void OnCollisionEnter (Collision other) {
+    public void RemoveDuckCount(Collision other) {
         if (other.gameObject.tag == "pickup") {
             Debug.Log("pickup tag detected");
 	        ducksCount--;
@@ -31,6 +31,10 @@ public class PickupUIUpdate : MonoBehaviour
             uglyText.color = new Color(0, 1, 0, 1);
         }
     }
+
+    // void OnCollisionEnter (Collision other) {
+    //     RemoveDuckCount(other);
+    // }
 
     void Start() {
         ducksCount = numDucksAtStart;

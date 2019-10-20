@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
+//[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
 public class NonViolentFowlAI : MonoBehaviour
 {
-    UnityEngine.AI.NavMeshAgent nav;
+    /*UnityEngine.AI.NavMeshAgent nav;
     Animator animator;
     AIState aIState;
     bool onTrack1 = true;
@@ -134,5 +134,5 @@ public class NonViolentFowlAI : MonoBehaviour
             }
             onTrack1 = !onTrack1;
         }
-    }
+    }*/
 }

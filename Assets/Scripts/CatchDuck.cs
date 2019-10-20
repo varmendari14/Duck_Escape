@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckPickup : MonoBehaviour
+public class CatchDuck : MonoBehaviour
 {
     public AudioClip catchAudio;
     private PickupUIUpdate removeDuckScript;
     // Start is called before the first frame update
     void Start()
     {
-        removeDuckScript = gameObject.GetComponent(typeof(PickupUIUpdate)) as PickupUIUpdate;
+        GameObject go = GameObject.Find("Collider Pickup");
+        removeDuckScript = (PickupUIUpdate) go.GetComponent(typeof(PickupUIUpdate));
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class CheckPickup : MonoBehaviour
                 removeDuckScript.RemoveDuckCount(other);
                 other.gameObject.SetActive(false);
                 AudioSource.PlayClipAtPoint(catchAudio, transform.position);
+                Destroy(gameObject);
         }
     }
 }
