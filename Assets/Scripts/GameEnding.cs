@@ -12,7 +12,7 @@ public class GameEnding : MonoBehaviour
 
     private void Start()
     {
-        statTracker = GameObject.Find("PlayerStatTracker").GetComponent<StatTracker>();
+        statTracker = GameObject.Find("GameStats").GetComponent<StatTracker>();
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == sceneName)
         {
             if (statTracker.didLose)
