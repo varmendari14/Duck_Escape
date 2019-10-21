@@ -17,18 +17,18 @@ public class GameEnding : MonoBehaviour
         {
             if (statTracker.didLose)
             {
-                mainText.text = "You let the foul fowel best you.";
-                newLevelText.text = "Restart";
+                mainText.text = "You let the foul fowl best you.";
+                newLevelText.text = "Restart Level";
             } else
             {
                 mainText.text = "You lucky duck, you won. Your birds are swimming happily in their pond.";
                 newLevelText.text = "Next Level";
             }
             if (statTracker.rubberDuck) {
-                mainText.text += " The rubber duck floats in the pond.";
+                mainText.text += " \nThe rubber duck floats in the pond.";
             }
             if (statTracker.uglyDuck) {
-                mainText.text += " The ugly duckling dances in the sand.";
+                mainText.text += " \nThe ugly duckling dances in the sand.";
             }
         }
     }

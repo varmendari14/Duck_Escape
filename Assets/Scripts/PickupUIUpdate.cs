@@ -43,5 +43,4 @@ public class PickupUIUpdate : MonoBehaviour
         statTracker.setDucks(ducksCount);
     	ducksText.text = "Ducks Remaining: " + ducksCount;
     }
-
 }
