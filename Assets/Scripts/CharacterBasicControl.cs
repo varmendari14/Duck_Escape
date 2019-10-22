@@ -42,6 +42,7 @@ public class CharacterBasicControl : MonoBehaviour
             if (Input.GetKey(KeyCode.C)) {
                 anim.SetBool("Walking", false);
                 anim.SetBool("Sneaking", true);
+                controller.height = 1.25f;
                 moveDir = new Vector3(0,0,1);
                 moveDir *= sneakspeed;
                 moveDir = transform.TransformDirection(moveDir);
@@ -83,6 +84,7 @@ public class CharacterBasicControl : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.C)) {
             anim.SetBool("Sneaking", false);
+            controller.height = 1.75f;
             moveDir = new Vector3(0,0,0);
         }
         if (Input.GetKeyUp(KeyCode.R)) {
