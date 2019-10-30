@@ -1,0 +1,12 @@
+there seems to be an issue with the GameWon Scenario. Wherever in the game it checks if all the ducks are caught, normally it would have
+made a reference to a GameEnding object (at least thats what it does for the loss scenario which I was able to find and fix). For example,
+in the loss scenario there is a script attached to the timer called TimerCountdown with a public GameEnding object. This is what we need
+to fix but for the gameWon.
+
+I don't know where the reference is set since one of yall made it but I was able to resolve the issue for losing so I assume it's the same
+if we can locate that.
+
+Right now, you cannot pick up the last duck and it will just teleport away if you try to. The issue appeared at the same time as the loss
+scenario i mentioned so i assume its the same problem. I can't fix this myself without knowing where
+the game checks for the final duck pickup and calls GameEnding.gameWon(). If you know where it is you can fix this, it shouldnt be hard.
+just drag GameEndingHandler into the public GameEnding and it (hopefully) should be good to go.
