@@ -20,7 +20,7 @@ public class CatchDuck : MonoBehaviour
     }
 
     void OnCollisionEnter (Collision other) {
-        //Debug.Log("collided");
+        Debug.Log("collided");
         if (other.gameObject.tag == "pickup" || other.gameObject.tag == "ugly" 
             || other.gameObject.tag == "rubber") {
                 removeDuckScript.RemoveDuckCount(other);

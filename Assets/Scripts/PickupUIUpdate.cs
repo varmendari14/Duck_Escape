@@ -26,9 +26,11 @@ public class PickupUIUpdate : MonoBehaviour
         }
         if (other.gameObject.tag == "rubber") {
             rubberText.color = new Color(0, 1, 0, 1);
+            statTracker.setRubberDuck(true);
         }
         if (other.gameObject.tag == "ugly") {
             uglyText.color = new Color(0, 1, 0, 1);
+            statTracker.setUglyDuck(true);
         }
     }
 
@@ -41,5 +43,4 @@ public class PickupUIUpdate : MonoBehaviour
         statTracker.setDucks(ducksCount);
     	ducksText.text = "Ducks Remaining: " + ducksCount;
     }
-
 }

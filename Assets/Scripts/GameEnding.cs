@@ -9,36 +9,61 @@ public class GameEnding : MonoBehaviour
     public StatTracker statTracker;
     public Text mainText;
     public Text newLevelText;
+    private CanvasGroup canvasGroup;
 
-    private void Start()
+    void Awake() {
+        canvasGroup = this.gameObject.transform.GetChild(0).GetComponent<CanvasGroup>();
+        if (canvasGroup == null) {
+            Debug.LogError("canvasGroup component not found.");
+        }
+    }
+
+    void Start() {
+        canvasGroup.alpha = 0;
+    }
+
+    void Update()
     {
         statTracker = GameObject.Find("GameStats").GetComponent<StatTracker>();
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == sceneName)
-        {
+        
             if (statTracker.didLose)
             {
-                mainText.text = "You let the foul fowel best you.";
-                newLevelText.text = "Restart";
+                mainText.text = "You let the foul fowl best you.";
+                newLevelText.text = "Restart Level";
             } else
             {
-                mainText.text = "You lucky duck, you won.";
+                mainText.text = "You lucky duck, you won. Your birds are swimming happily in their pond.";
                 newLevelText.text = "Next Level";
             }
-        }
+            if (statTracker.rubberDuck) {
+                mainText.text += " \nThe rubber duck floats in the pond.";
+            }
+            if (statTracker.uglyDuck) {
+                mainText.text += " \nThe ugly duckling dances in the sand.";
+            }
+        
     }
 
     public void gameWon()
 	{
         Debug.Log("Game won");
         statTracker.setDidLose(false);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        makeMenu();
 	}
 
     public void gameLost()
 	{
         Debug.Log("Game Lost");
         statTracker.setDidLose(true);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        makeMenu();
 	}
+
+    public void makeMenu() {
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1f;
+        Time.timeScale = 0f;
+    }
 
 }

@@ -6,6 +6,8 @@ public class StatTracker : MonoBehaviour
 {
     public int ducksLeft;
     public bool didLose = true;
+    public bool uglyDuck = false;
+    public bool rubberDuck = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +42,11 @@ public class StatTracker : MonoBehaviour
     public void setDidLose(bool lost)
     {
         didLose = lost;
+    }
+    public void setUglyDuck(bool ugly) {
+        uglyDuck = ugly;
+    }
+    public void setRubberDuck(bool rubber) {
+        rubberDuck = rubber;
     }
 }

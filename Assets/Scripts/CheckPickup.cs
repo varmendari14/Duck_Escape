@@ -20,6 +20,8 @@ public class CheckPickup : MonoBehaviour
 
     void OnCollisionEnter (Collision other) {
         //Debug.Log("collided");
+        // Add wasHit tag to ducks and trigger it on collision and check it here and in box script
+        //try oncollisionexit
         if (other.gameObject.tag == "pickup" || other.gameObject.tag == "ugly" 
             || other.gameObject.tag == "rubber") {
                 removeDuckScript.RemoveDuckCount(other);
