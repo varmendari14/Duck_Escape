@@ -9,23 +9,12 @@ public class GameEnding : MonoBehaviour
     public StatTracker statTracker;
     public Text mainText;
     public Text newLevelText;
-    private CanvasGroup canvasGroup;
 
-    void Awake() {
-        canvasGroup = this.gameObject.transform.GetChild(0).GetComponent<CanvasGroup>();
-        if (canvasGroup == null) {
-            Debug.LogError("canvasGroup component not found.");
-        }
-    }
-
-    void Start() {
-        canvasGroup.alpha = 0;
-    }
-
-    void Update()
+    private void Start()
     {
         statTracker = GameObject.Find("GameStats").GetComponent<StatTracker>();
-        
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == sceneName)
+        {
             if (statTracker.didLose)
             {
                 mainText.text = "You let the foul fowl best you.";
@@ -41,29 +30,21 @@ public class GameEnding : MonoBehaviour
             if (statTracker.uglyDuck) {
                 mainText.text += " \nThe ugly duckling dances in the sand.";
             }
-        
+        }
     }
 
     public void gameWon()
 	{
         Debug.Log("Game won");
         statTracker.setDidLose(false);
-        makeMenu();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
 	}
 
     public void gameLost()
 	{
         Debug.Log("Game Lost");
         statTracker.setDidLose(true);
-        makeMenu();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
 	}
-
-    public void makeMenu() {
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.alpha = 1f;
-        Time.timeScale = 0f;
-    }
 
 }

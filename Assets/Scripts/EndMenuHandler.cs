@@ -26,7 +26,6 @@ public class EndMenuHandler : MonoBehaviour
     {
         Debug.Log("Next Button Pressed");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
-        Time.timeScale = 1f;
         // TODO: Add behavior for going to the next level when we have more than one
     }
 }
