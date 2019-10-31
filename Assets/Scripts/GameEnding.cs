@@ -1,20 +1,33 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameEnding : MonoBehaviour
 {
-    public string sceneName = "LevelEndScene";
     public StatTracker statTracker;
     public Text mainText;
     public Text newLevelText;
+    public GameObject nextButton;
+    public GameObject restartButton;
 
-    private void Start()
+    private CanvasGroup canvasGroup;
+
+    void Awake() {
+        canvasGroup = this.gameObject.transform.GetChild(0).GetComponent<CanvasGroup>();
+        if (canvasGroup == null) {
+            Debug.LogError("canvasGroup component not found.");
+        }
+    }
+
+    void Start() {
+        canvasGroup.alpha = 0;
+    }
+
+    void Update()
     {
         statTracker = GameObject.Find("GameStats").GetComponent<StatTracker>();
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == sceneName)
-        {
+        
             if (statTracker.didLose)
             {
                 mainText.text = "You let the foul fowl best you.";
@@ -30,21 +43,32 @@ public class GameEnding : MonoBehaviour
             if (statTracker.uglyDuck) {
                 mainText.text += " \nThe ugly duckling dances in the sand.";
             }
-        }
+        
     }
 
     public void gameWon()
 	{
         Debug.Log("Game won");
         statTracker.setDidLose(false);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        nextButton.SetActive(true);
+        restartButton.SetActive(false);
+        makeMenu();
 	}
 
     public void gameLost()
 	{
         Debug.Log("Game Lost");
         statTracker.setDidLose(true);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        nextButton.SetActive(false);
+        restartButton.SetActive(true);
+        makeMenu();
 	}
+
+    public void makeMenu() {
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1f;
+        Time.timeScale = 0f;
+    }
 
 }
