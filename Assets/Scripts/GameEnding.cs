@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class GameEnding : MonoBehaviour
 {
-    public string sceneName = "LevelEndScene";
     public StatTracker statTracker;
     public Text mainText;
     public Text newLevelText;
+    public GameObject nextButton;
+    public GameObject restartButton;
+
     private CanvasGroup canvasGroup;
 
     void Awake() {
@@ -48,6 +50,8 @@ public class GameEnding : MonoBehaviour
 	{
         Debug.Log("Game won");
         statTracker.setDidLose(false);
+        nextButton.SetActive(true);
+        restartButton.SetActive(false);
         makeMenu();
 	}
 
@@ -55,11 +59,12 @@ public class GameEnding : MonoBehaviour
 	{
         Debug.Log("Game Lost");
         statTracker.setDidLose(true);
+        nextButton.SetActive(false);
+        restartButton.SetActive(true);
         makeMenu();
 	}
 
     public void makeMenu() {
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;

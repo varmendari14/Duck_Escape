@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class EndMenuHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string currentSceneName;
+    public string nextSceneName;
 
     public void Quit()
     {
@@ -22,11 +13,18 @@ public class EndMenuHandler : MonoBehaviour
         Application.Quit();
     }
 
-    public void RestartOrNext()
+    public void RestartButton()
+    {
+        Debug.Log("Restart Button Pressed");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneName);
+        Time.timeScale = 1f;
+    }
+
+    public void NextButton()
     {
         Debug.Log("Next Button Pressed");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
-        Time.timeScale = 1f;
-        // TODO: Add behavior for going to the next level when we have more than one
+        // TODO: Uncomment when level 2 is added
+        // UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
+        // Time.timeScale = 1f;
     }
 }
