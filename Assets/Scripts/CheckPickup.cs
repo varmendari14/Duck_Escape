@@ -24,9 +24,9 @@ public class CheckPickup : MonoBehaviour
         //try oncollisionexit
         if (other.gameObject.tag == "pickup" || other.gameObject.tag == "ugly" 
             || other.gameObject.tag == "rubber") {
-                removeDuckScript.RemoveDuckCount(other);
                 other.gameObject.SetActive(false);
                 AudioSource.PlayClipAtPoint(catchAudio, transform.position);
+                removeDuckScript.RemoveDuckCount(other);
         }
     }
 }
