@@ -12,7 +12,7 @@ public class GooseAI : MonoBehaviour
 {
 	UnityEngine.AI.NavMeshAgent mesh;
 	Animator anim;
-	public GameObject[] waypoints = new GameObject[6];
+	public GameObject[] waypoints = new GameObject[4];
 	int currWaypoint = 0;
 	NavMeshAgent nav;
 	Vector3 dir;
