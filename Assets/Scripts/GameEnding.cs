@@ -11,16 +11,19 @@ public class GameEnding : MonoBehaviour
     public GameObject nextButton;
     public GameObject restartButton;
 
-    private CanvasGroup canvasGroup;
+    public CanvasGroup canvasGroup;
 
     void Awake() {
         canvasGroup = this.gameObject.transform.GetChild(0).GetComponent<CanvasGroup>();
+        Debug.Log(canvasGroup);
         if (canvasGroup == null) {
             Debug.LogError("canvasGroup component not found.");
         }
     }
 
     void Start() {
+        canvasGroup = this.gameObject.transform.GetChild(0).GetComponent<CanvasGroup>();
+        Debug.Log(canvasGroup);
         canvasGroup.alpha = 0;
     }
 
