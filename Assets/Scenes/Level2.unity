@@ -4289,6 +4289,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 116347969, guid: f92b486e5b0e2094da417c0aa7019c83, type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 1914337582}
+    - target: {fileID: 116347969, guid: f92b486e5b0e2094da417c0aa7019c83, type: 3}
+      propertyPath: uglyText
+      value: 
+      objectReference: {fileID: 1911189411}
+    - target: {fileID: 116347969, guid: f92b486e5b0e2094da417c0aa7019c83, type: 3}
+      propertyPath: rubberText
+      value: 
+      objectReference: {fileID: 2141904373}
+    - target: {fileID: 116347969, guid: f92b486e5b0e2094da417c0aa7019c83, type: 3}
+      propertyPath: ducksText
+      value: 
+      objectReference: {fileID: 1543328315}
+    - target: {fileID: 116347969, guid: f92b486e5b0e2094da417c0aa7019c83, type: 3}
+      propertyPath: statTracker
+      value: 
+      objectReference: {fileID: 2043650955}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92b486e5b0e2094da417c0aa7019c83, type: 3}
 --- !u!1 &441175619
@@ -5409,7 +5429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f342779288a4647a5a4301fb7ba06aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSceneName: Level1
+  currentSceneName: Level2
   nextSceneName: Level2
 --- !u!114 &527178223
 MonoBehaviour:
@@ -17025,6 +17045,7 @@ MonoBehaviour:
   newLevelText: {fileID: 1921548127}
   nextButton: {fileID: 691769639}
   restartButton: {fileID: 527178221}
+  canvasGroup: {fileID: 1571693442}
 --- !u!4 &1914337583
 Transform:
   m_ObjectHideFlags: 0
