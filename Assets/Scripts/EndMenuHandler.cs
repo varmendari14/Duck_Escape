@@ -22,12 +22,19 @@ public class EndMenuHandler : MonoBehaviour
 
     public void RestartButton()
     {
-        Debug.Log("Next Level/Restart Button Pressed");
+        Debug.Log("Restart Button Pressed");
         if (didLose) {
             UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneName);
         } else {
             UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
         }
+        Time.timeScale = 1f;
+    }
+
+    public void NextButton()
+    {
+        Debug.Log("Restart Button Pressed");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
         Time.timeScale = 1f;
     }
 }
