@@ -16,7 +16,7 @@ public class HealthBar : MonoBehaviour
         healthText.text = "Health: " + currHealth.ToString("0");
     }
 
-    void Damage(int points) {
+    public void Damage(int points) {
         currHealth -= points;
         healthText.text = "Health: " + currHealth.ToString("0");
         if (currHealth <= 0)

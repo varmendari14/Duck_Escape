@@ -6,10 +6,22 @@ public class GooseAttack : MonoBehaviour
 {
 	public bool triggered = false;
     public bool obtrig = false;
+    public int damagePoints = 1;
+    public float damageDist = 3f;
+    public HealthBar healthBar;
+    public float attackTimeDelta = 2f;
+
+    private float lastAttackTime;
 
 	private void OnTriggerEnter(Collider c) {
         if(c.gameObject.tag == "Player"){
             triggered = true;
+            if (Vector3.Distance(c.gameObject.transform.position, this.gameObject.transform.position) < damageDist
+                && Time.time - lastAttackTime > attackTimeDelta)
+            {
+                healthBar.Damage(1);
+                lastAttackTime = Time.time;
+            }
         }
 
         if(c.gameObject.tag == "Object"){
@@ -32,6 +44,7 @@ public class GooseAttack : MonoBehaviour
     {
         triggered = false;
         obtrig = false;
+        lastAttackTime = Time.time;
     }
 
     // Update is called once per frame

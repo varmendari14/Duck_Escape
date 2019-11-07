@@ -4012,7 +4012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 1120464717}
-  startTime: 5
+  startTime: 90
   gameEnding: {fileID: 1914337582}
 --- !u!4 &413679714
 Transform:
@@ -4309,6 +4309,10 @@ PrefabInstance:
       propertyPath: statTracker
       value: 
       objectReference: {fileID: 2043650955}
+    - target: {fileID: 116347969, guid: f92b486e5b0e2094da417c0aa7019c83, type: 3}
+      propertyPath: numDucksAtStart
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92b486e5b0e2094da417c0aa7019c83, type: 3}
 --- !u!1 &441175619
@@ -15317,6 +15321,14 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 151481148}
+    - target: {fileID: 1770040235, guid: 747cc8de91a4f44488834bf8a9187e45, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 553752838}
+    - target: {fileID: 1770040235, guid: 747cc8de91a4f44488834bf8a9187e45, type: 3}
+      propertyPath: damageDist
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747cc8de91a4f44488834bf8a9187e45, type: 3}
 --- !u!1 &1764741628
