@@ -11,7 +11,8 @@ public class StatTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        uglyDuck = false;
+        rubberDuck = false;
     }
 
     // Update is called once per frame
@@ -22,6 +23,8 @@ public class StatTracker : MonoBehaviour
 
     private void Awake()
     {
+        uglyDuck = false;
+        rubberDuck = false;
         DontDestroyOnLoad(this.gameObject);
     }
 

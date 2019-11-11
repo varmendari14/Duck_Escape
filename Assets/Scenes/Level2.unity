@@ -3789,8 +3789,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f342779288a4647a5a4301fb7ba06aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSceneName: 
-  nextSceneName: 
+  currentSceneName: Level2
+  nextSceneName: Level2
+  statTracker: {fileID: 2043650955}
 --- !u!114 &406020867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5435,6 +5436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSceneName: Level2
   nextSceneName: Level2
+  statTracker: {fileID: 2043650955}
 --- !u!114 &527178223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6858,8 +6860,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f342779288a4647a5a4301fb7ba06aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSceneName: Level1
+  currentSceneName: Level2
   nextSceneName: Level2
+  statTracker: {fileID: 2043650955}
 --- !u!114 &691769642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17080,6 +17083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSceneName: Level2
   nextSceneName: Level2
+  statTracker: {fileID: 2043650955}
 --- !u!114 &1914337582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19247,6 +19251,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 8553585816283224253, guid: eae3ac7d2ac401840b3fc35286eaf551,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8553585816608525807, guid: eae3ac7d2ac401840b3fc35286eaf551,
         type: 3}
       propertyPath: m_IsKinematic
@@ -19256,11 +19265,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mass
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8553585816283224253, guid: eae3ac7d2ac401840b3fc35286eaf551,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3ac7d2ac401840b3fc35286eaf551, type: 3}

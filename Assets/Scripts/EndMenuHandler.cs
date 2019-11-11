@@ -7,6 +7,7 @@ public class EndMenuHandler : MonoBehaviour
     public string currentSceneName;
     public string nextSceneName;
     private bool didLose = false;
+    public StatTracker statTracker;
     private StatTracker st;
 
     public void Start() {
@@ -26,6 +27,8 @@ public class EndMenuHandler : MonoBehaviour
         if (didLose) {
             UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneName);
         } else {
+            statTracker.setUglyDuck(false);
+            statTracker.setRubberDuck(false);
             UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
         }
         Time.timeScale = 1f;
@@ -33,7 +36,7 @@ public class EndMenuHandler : MonoBehaviour
 
     public void NextButton()
     {
-        Debug.Log("Restart Button Pressed");
+        Debug.Log("Next Button Pressed");
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
         Time.timeScale = 1f;
     }

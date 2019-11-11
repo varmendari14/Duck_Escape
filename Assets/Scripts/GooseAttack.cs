@@ -6,8 +6,8 @@ public class GooseAttack : MonoBehaviour
 {
 	public bool triggered = false;
     public bool obtrig = false;
-    public int damagePoints = 1;
-    public float damageDist = 3f;
+    public int damagePoints = 5;
+    public float damageDist = 5f;
     public HealthBar healthBar;
     public float attackTimeDelta = 2f;
 
@@ -19,7 +19,7 @@ public class GooseAttack : MonoBehaviour
             if (Vector3.Distance(c.gameObject.transform.position, this.gameObject.transform.position) < damageDist
                 && Time.time - lastAttackTime > attackTimeDelta)
             {
-                healthBar.Damage(1);
+                healthBar.Damage(damagePoints);
                 lastAttackTime = Time.time;
             }
         }
