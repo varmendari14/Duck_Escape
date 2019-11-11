@@ -18152,7 +18152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1891c544bdab747ae8852f6072d0850c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ducksLeft: 0
+  ducksLeft: 3
   didLose: 1
   uglyDuck: 0
   rubberDuck: 0

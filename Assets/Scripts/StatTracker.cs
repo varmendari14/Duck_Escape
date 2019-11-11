@@ -25,7 +25,7 @@ public class StatTracker : MonoBehaviour
     {
         uglyDuck = false;
         rubberDuck = false;
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     public void setDucks(int numDucks)
