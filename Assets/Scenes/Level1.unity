@@ -4908,6 +4908,10 @@ PrefabInstance:
       propertyPath: statTracker
       value: 
       objectReference: {fileID: 615468011}
+    - target: {fileID: 1049215053, guid: f92b486e5b0e2094da417c0aa7019c83, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92b486e5b0e2094da417c0aa7019c83, type: 3}
 --- !u!1001 &691934541
