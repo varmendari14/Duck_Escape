@@ -48,7 +48,9 @@ public class DuckAI : NonViolentFowlAI
     void Update()
     {
         if (fowl.trig == true) {
-                nav.SetDestination(player.transform.position * -1);
+            Debug.Log("run away" + player.transform.position);
+                Vector3 heading = this.transform.position - player.transform.position;
+                nav.SetDestination(player.transform.position + heading * 5);
                 nav.speed = 4f;
                 counter -= Time.deltaTime;
 
