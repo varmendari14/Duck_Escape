@@ -39,7 +39,7 @@ public class CharacterBasicControl : MonoBehaviour
             }
 
             //Crouching/Sneaking
-            if (Input.GetKey(KeyCode.C)) {
+            if (Input.GetKey(KeyCode.LeftControl)) {
                 anim.SetBool("Walking", false);
                 anim.SetBool("Sneaking", true);
                 controller.height = 1.25f;
@@ -49,7 +49,7 @@ public class CharacterBasicControl : MonoBehaviour
             }
 
             //Running
-            if (Input.GetKey(KeyCode.R)) {
+            if (Input.GetKey(KeyCode.LeftShift)) {
                 anim.SetBool("Walking", false);
                 anim.SetBool("Running", true);
                 moveDir = new Vector3(0,0,1);
@@ -58,7 +58,7 @@ public class CharacterBasicControl : MonoBehaviour
             }
 
             // Box Drop
-            if (Input.GetKeyDown(KeyCode.B)) {
+            if (Input.GetKeyDown(KeyCode.Q)) {
                 anim.SetBool("Walking", false);
                 anim.SetBool("Sneaking", false);
                 anim.SetBool("Running", false);
@@ -69,7 +69,7 @@ public class CharacterBasicControl : MonoBehaviour
                     GameObject boxobj = Instantiate(box, transform.position + new Vector3(-0.5F, -0.5F, 0), Quaternion.identity) as GameObject;
                 }
             }
-            
+
             //Jumping
             if(Input.GetKeyDown(KeyCode.Space)) {
                 moveDir.y = 3;
@@ -82,18 +82,18 @@ public class CharacterBasicControl : MonoBehaviour
             anim.SetBool("Walking", false);
             moveDir = new Vector3(0,0,0);
         }
-        if (Input.GetKeyUp(KeyCode.C)) {
+        if (Input.GetKeyUp(KeyCode.LeftControl)) {
             anim.SetBool("Sneaking", false);
             controller.height = 1.75f;
             moveDir = new Vector3(0,0,0);
         }
-        if (Input.GetKeyUp(KeyCode.R)) {
+        if (Input.GetKeyUp(KeyCode.LeftShift)) {
             anim.SetBool("Running", false);
             moveDir = new Vector3(0,0,0);
         }
-        
+
         // Net Swing
-        if (Input.GetKeyDown(KeyCode.N)) {
+        if (Input.GetKeyDown(KeyCode.E)) {
                 GetComponent<Animator>().SetTrigger("Swing");
         }
 
