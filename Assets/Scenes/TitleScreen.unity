@@ -12713,7 +12713,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Hold W - Go forward\nHold A/D - turn left/right\r\nPress E - swing net\r\nPress
-    Q - drop box\nHold W & Shift - run\r\nHold W & Ctrl - crouch"
+    Q - drop box\nHold W & Left Shift - run\r\nHold W & Left Ctrl - crouch"
 --- !u!222 &1730435161
 CanvasRenderer:
   m_ObjectHideFlags: 0
