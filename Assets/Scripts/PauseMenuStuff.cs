@@ -2,15 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class PauseMenuStuff : MonoBehaviour
 {
+    public CanvasGroup canvasGroup;
     public void ResumeButton() {
-        //TODO - close pause menu
+        // Debug.Log("Resume Button Pressed");
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.alpha = 0f;
+        Time.timeScale = 1f;
     }
 
     public void RestartButton() {
-        //TODO - reload current scene
+        // Debug.Log("Restart Button Pressed");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
 
     public void ControlsButton() {
@@ -23,6 +32,6 @@ public class PauseMenuStuff : MonoBehaviour
         Debug.Log("Quit Button Pressed");
         Application.Quit();
     }
-    
+
 
 }
