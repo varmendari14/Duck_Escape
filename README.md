@@ -2,12 +2,12 @@
 Team Goober's Duck Escape project for Fall 2019 video game design.
 
 ## Controls
-* Hold ```W``` - Go Forward, Relase W - Stop
+* Hold ```W``` - Go Forward, Release W - Stop
 * Hold ```A/D``` - Turn Left/Right
-* Hold ```W & R``` - Run
-* Hold ```W & C``` - Crouch
-* Press ```N``` - Swing Net
-* Press ```B``` - Place Box
+* Hold ```W & Left Shift``` - Run
+* Hold ```W & Left Ctrl``` - Crouch
+* Press ```E``` - Swing Net
+* Press ```Q``` - Place Box
 
 ## Goals
 Catch all the ducks before time runs out! Try to find the ugly duckling and the rubber duck if you can.
