@@ -7816,6 +7816,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ugly
       objectReference: {fileID: 0}
+    - target: {fileID: 8311534066505561976, guid: 48aff7373a1fe456596ca8621ae16317,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0.14077187
+      objectReference: {fileID: 0}
     - target: {fileID: 8311534066505561978, guid: 48aff7373a1fe456596ca8621ae16317,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7886,25 +7891,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.24566132
       objectReference: {fileID: 0}
-    - target: {fileID: 8311534066505561976, guid: 48aff7373a1fe456596ca8621ae16317,
-        type: 3}
-      propertyPath: MinDistance
-      value: 0.14077187
-      objectReference: {fileID: 0}
     - target: {fileID: 8311534066505561982, guid: 48aff7373a1fe456596ca8621ae16317,
         type: 3}
       propertyPath: m_Mass
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8311534066083005030, guid: 48aff7373a1fe456596ca8621ae16317,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4166447
-      objectReference: {fileID: 0}
-    - target: {fileID: 8311534066580591652, guid: 48aff7373a1fe456596ca8621ae16317,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4166447
       objectReference: {fileID: 0}
     - target: {fileID: 8311534065225257995, guid: 48aff7373a1fe456596ca8621ae16317,
         type: 3}
@@ -7930,6 +7920,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311534066083005030, guid: 48aff7373a1fe456596ca8621ae16317,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4166447
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311534066580591652, guid: 48aff7373a1fe456596ca8621ae16317,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4166447
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48aff7373a1fe456596ca8621ae16317, type: 3}
@@ -12712,8 +12712,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Hold W - Go forward\nHold A/D - turn left/right\r\nPress E - swing net\r\nPress
-    Q - drop box\nHold W & Left Shift - run\r\nHold W & Left Ctrl - crouch"
+  m_Text: "Hold W - Go forward\nHold A/D - turn left/right\r\nHold W & Left Shift
+    - run\r\nHold W & Left Ctrl - crouch\nLeft Click - swing net\r\nRight Click -
+    drop box"
 --- !u!222 &1730435161
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15179,11 +15180,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HumanCollider
       objectReference: {fileID: 0}
-    - target: {fileID: 6434002367687612657, guid: 790949661035a034aa50d40158ad5c30,
-        type: 3}
-      propertyPath: m_Name
-      value: Collider Pickup
-      objectReference: {fileID: 0}
     - target: {fileID: 6434002369467554441, guid: 790949661035a034aa50d40158ad5c30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15244,5 +15240,10 @@ PrefabInstance:
       propertyPath: overworldAudio
       value: 
       objectReference: {fileID: 8300000, guid: 20c95f058b1e4204da210490b8b310c5, type: 3}
+    - target: {fileID: 6434002367687612657, guid: 790949661035a034aa50d40158ad5c30,
+        type: 3}
+      propertyPath: m_Name
+      value: Collider Pickup
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 790949661035a034aa50d40158ad5c30, type: 3}

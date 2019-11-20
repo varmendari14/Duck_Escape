@@ -58,7 +58,7 @@ public class CharacterBasicControl : MonoBehaviour
             }
 
             // Box Drop
-            if (Input.GetKeyDown(KeyCode.Q)) {
+            if (Input.GetMouseButtonDown(1)) {
                 anim.SetBool("Walking", false);
                 anim.SetBool("Sneaking", false);
                 anim.SetBool("Running", false);
@@ -93,7 +93,7 @@ public class CharacterBasicControl : MonoBehaviour
         }
 
         // Net Swing
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetMouseButtonDown(0)) {
                 GetComponent<Animator>().SetTrigger("Swing");
         }
 
