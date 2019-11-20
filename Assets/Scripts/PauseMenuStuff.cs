@@ -18,20 +18,14 @@ public class PauseMenuStuff : MonoBehaviour
 
     public void RestartButton() {
         // Debug.Log("Restart Button Pressed");
+        // Will load whatever current level is loaded
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
-    }
-
-    public void ControlsButton() {
-        //TODO - enable (and create) ControlsMenu(TBI) object
-        //statTracker = GameObject.Find("ControlsMenu").Enable? or something similar
-        //controls menu should already exist in title screen scene right?
     }
 
     public void QuitButton() {
         Debug.Log("Quit Button Pressed");
         Application.Quit();
     }
-
 
 }
