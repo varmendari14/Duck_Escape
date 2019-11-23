@@ -22,6 +22,8 @@ public class GooseAI : MonoBehaviour
 	public GameObject player;
 	Vector3 relativePos;
 
+	public AudioClip damageAudio;
+	private bool hasPlayed = false;
 
 	private void setNextWaypoint() {
 		if (waypoints.Length == 0) {
@@ -51,7 +53,7 @@ public class GooseAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
     	//transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
 
@@ -60,10 +62,15 @@ public class GooseAI : MonoBehaviour
     	}
 
     	if (goose.triggered == true) {
+			if (!hasPlayed) {
+				AudioSource.PlayClipAtPoint(damageAudio, transform.position);
+				hasPlayed = true;
+			}
     		anim.SetBool("Attack",true);
     	    //nav.SetDestination(player.transform.position); USED to attack player
 
     	} else {
+			hasPlayed = false;
     		anim.SetBool("Attack",false);
     	}
 

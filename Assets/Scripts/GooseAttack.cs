@@ -16,6 +16,7 @@ public class GooseAttack : MonoBehaviour
 	private void OnTriggerEnter(Collider c) {
         if(c.gameObject.tag == "Player"){
             triggered = true;
+            
             if (Vector3.Distance(c.gameObject.transform.position, this.gameObject.transform.position) < damageDist
                 && Time.time - lastAttackTime > attackTimeDelta)
             {
