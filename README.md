@@ -1,7 +1,10 @@
 # Duck_Escape
-Team Goober's Duck Escape project for Fall 2019 video game design.
-Violet Armendariz varmendariz31@gatech.edu varmendariz3
-Jacob Cianci jcianci3@gatech.edu jcianci3
+* Team Goober's Duck Escape project for Fall 2019 video game design.
+* Violet Armendariz varmendariz31@gatech.edu varmendariz3
+* Jacob Cianci jcianci3@gatech.edu jcianci3
+* Raj Shiddapur rshiddapur3@gatech.edu rshiddapur3
+* Brian Piejak bpiejak3@gatech.edu bpiejak3
+* Matthew Orubina morubina3@gatech.edu morubina3
 
 ## Controls
 * Hold ```W``` - Go Forward, Release W - Stop
@@ -10,6 +13,7 @@ Jacob Cianci jcianci3@gatech.edu jcianci3
 * Hold ```W & Left Ctrl``` - Crouch
 * ```Left Click``` - Swing Net
 * ```Right Click``` - Place Box
+* ```Spacebar``` - Jump
 
 ## Goals
 Catch all the ducks before time runs out! Try to find the ugly duckling and the rubber duck if you can.
@@ -29,6 +33,9 @@ Tips:
 7. Choose to try and find the ugly duckling or the rubber duck. In later levels, choose where and when you would like to place your bird cage.
 8. Press ```esc``` to bring up the in game menu. GUI around edge to show players what is going on. Title screen with options for different screens.
 
+## Known Bugs
+* Sometimes, inconsistently, the ducks will be spooked off stage, and dissapear momentarily. They always eventually return to their path.
+
 ## Assets
 1. Park assets came from https://assetstore.unity.com/packages/3d/environments/urban/low-poly-park-61922
 2. All sounds came from freesound.org
@@ -37,15 +44,15 @@ Tips:
 5. The human and bird models were created by us.
 
 ## Who Did What
-* Violet:
-* Jacob:
-* Brian:
-* Matt:
-* Raj:
-* Alex:
+* Violet: Created Human, Human Setup (Controls, Sounds etc.), Team Management, General Fixes
+* Jacob: UI, Ugly and Rubber Duck Checks, Ending Cutscene, General Fixes
+* Brian: Bird AI, UI, Sounds on Birds, Ending Cutscene, Health, Assets Screen, General Fixes
+* Matt: Created Birds, Bird AI, Level Management, General Fixes
+* Raj: Pause Menu, Health, Title Screen, General Fixes
+* Alex: Created Levels, Water Damage, General Fixes
 
 ## What Scenes to Open
-1. Title Page
-2. Level 1
-3. Level 2
+1. TitleScreen
+2. Level1
+3. Level2
 
