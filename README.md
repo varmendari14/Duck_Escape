@@ -5,6 +5,7 @@
 * Raj Shiddapur rshiddapur3@gatech.edu rshiddapur3
 * Brian Piejak bpiejak3@gatech.edu bpiejak3
 * Matthew Orubina morubina3@gatech.edu morubina3
+* Alexandra Foote afoote8@gatech.edu afoote8
 
 ## Controls
 * Hold ```W``` - Go Forward, Release W - Stop
